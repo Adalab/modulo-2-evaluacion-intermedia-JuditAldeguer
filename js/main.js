@@ -19,7 +19,15 @@ function handleClickNumber(event) {
   answer();
   countingCliks();
 }
-
+function handleClickNumber2(event) {
+  if (event.key === 'Enter') {
+    console.log(`Mi número aleatorio es ${initialNumb}`);
+    answer();
+    countingCliks();
+  } else {
+    console.log('Escribe el número y dale a Prueba');
+  }
+}
 function answer() {
   const chosenNumbN = parseInt(chosenNumb.value);
   if (chosenNumbN === initialNumb) {
@@ -52,3 +60,4 @@ function countingCliks() {
 
 //listeners
 btn.addEventListener('click', handleClickNumber);
+document.addEventListener('keyup', handleClickNumber2);
