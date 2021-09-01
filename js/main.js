@@ -34,7 +34,7 @@ function answer() {
         ' Pista: <span class="js_span pista">Demasiado alto.</span>';
       pista.classList.remove('winner');
       pista.classList.remove('cheating');
-    } else if ((chosenNumbN < initialNumb) & (chosenNumbN >= 0)) {
+    } else if ((chosenNumbN < initialNumb) & (chosenNumbN > 0)) {
       pista.innerHTML =
         ' Pista: <span class="js_span pista">Demasiado bajo.</span>';
       pista.classList.remove('winner');
