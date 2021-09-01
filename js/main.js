@@ -30,6 +30,7 @@ function answer() {
     pista.classList.add('winner');
   } else if (chosenNumbN !== initialNumb) {
     if ((chosenNumbN > initialNumb) & (chosenNumbN <= 100)) {
+      pista.innerHTML = 'Pista: ' + span.innerHTML;
       span.innerHTML = ' Demasiado alto.';
       pista.classList.remove('winner');
       pista.classList.remove('cheating');
