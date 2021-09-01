@@ -24,20 +24,18 @@ function handleClickNumber(event) {
 
 function answer() {
   const chosenNumbN = parseInt(chosenNumb.value);
-
   if (chosenNumbN === initialNumb) {
     pista.innerHTML = 'Has ganado campeona!!!';
     pista.classList.add('winner');
   } else if (chosenNumbN !== initialNumb) {
     if ((chosenNumbN > initialNumb) & (chosenNumbN <= 100)) {
-      pista.innerHTML = 'Pista: ' + span.innerHTML;
-      span.innerHTML = ' Demasiado alto.';
+      pista.innerHTML =
+        ' Pista: <span class="js_span pista">Demasiado alto.</span>';
       pista.classList.remove('winner');
       pista.classList.remove('cheating');
-      span.classList.add('pista');
     } else if ((chosenNumbN < initialNumb) & (chosenNumbN >= 0)) {
-      span.innerHTML = ' Demasiado bajo.';
-      span.classList.add('pista');
+      pista.innerHTML =
+        ' Pista: <span class="js_span pista">Demasiado bajo.</span>';
       pista.classList.remove('winner');
       pista.classList.remove('cheating');
     } else {
