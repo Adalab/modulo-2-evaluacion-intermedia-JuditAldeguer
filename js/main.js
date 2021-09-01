@@ -25,28 +25,29 @@ function handleClickNumber(event) {
 function answer() {
   const chosenNumbN = parseInt(chosenNumb.value);
   if (chosenNumbN === initialNumb) {
-    pista.innerHTML = 'Has ganado campeona!!!';
+    writeTip('¡¡¡Has ganado campeona!!!');
     pista.classList.add('winner');
     pista.classList.remove('cheating');
   } else if (chosenNumbN !== initialNumb) {
     if ((chosenNumbN > initialNumb) & (chosenNumbN <= 100)) {
-      pista.innerHTML =
-        ' Pista: <span class="js_span pista">Demasiado alto.</span>';
+      writeTip(' Pista: <span class="js_span pista">Demasiado alto.</span>');
       pista.classList.remove('winner');
       pista.classList.remove('cheating');
     } else if ((chosenNumbN < initialNumb) & (chosenNumbN > 0)) {
-      pista.innerHTML =
-        ' Pista: <span class="js_span pista">Demasiado bajo.</span>';
+      writeTip(' Pista: <span class="js_span pista">Demasiado bajo.</span>');
       pista.classList.remove('winner');
       pista.classList.remove('cheating');
     } else {
-      pista.innerHTML = 'El número debe estar entre 1 y 100.';
+      writeTip('El número debe estar entre 1 y 100.');
       pista.classList.add('cheating');
       pista.classList.remove('winner');
     }
   }
 }
 
+function writeTip(message) {
+  pista.innerHTML = message;
+}
 function countingCliks() {
   attemps.innerHTML = `Número de intentos: ${counter++}`;
 }
