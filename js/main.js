@@ -2,13 +2,14 @@
 
 //variables
 const btn = document.querySelector('.js_btn');
-const initialNumb = getRandomNumber();
+const initialNumb = getRandomNumber(100);
+const chosenNumb = document.querySelector('js_input').innerHTML;
 
 //functions
 function handleClickNumber(event) {
   event.preventDefault();
-  debugger;
   console.log(`Mi número aleatorio es ${initialNumb}`);
+  debugger;
 }
 
 function getRandomNumber(max) {
