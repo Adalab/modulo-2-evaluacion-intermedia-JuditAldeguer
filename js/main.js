@@ -14,18 +14,18 @@ function getRandomNumber(max) {
 }
 
 function handleClickNumber(event) {
+  debugger;
   event.preventDefault();
   console.log(`Mi número aleatorio es ${initialNumb}`);
   answer();
   countingCliks();
 }
 function handleClickNumber2(event) {
-  if (event.key === 'Enter') {
+  debugger;
+  if (event.keyCode === 13) {
     console.log(`Mi número aleatorio es ${initialNumb}`);
     answer();
     countingCliks();
-  } else {
-    console.log('Escribe el número y dale a Prueba');
   }
 }
 function answer() {
@@ -60,4 +60,4 @@ function countingCliks() {
 
 //listeners
 btn.addEventListener('click', handleClickNumber);
-document.addEventListener('keyup', handleClickNumber2);
+document.addEventListener('onkeydown', handleClickNumber2);
