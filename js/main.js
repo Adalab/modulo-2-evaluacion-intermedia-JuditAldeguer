@@ -16,7 +16,6 @@ function getRandomNumber(max) {
 function handleClickNumber(event) {
   event.preventDefault();
   console.log(`Mi número aleatorio es ${initialNumb}`);
-  debugger;
   answer();
   countingCliks();
 }
