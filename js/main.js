@@ -5,7 +5,6 @@ const btn = document.querySelector('.js_btn');
 const initialNumb = getRandomNumber(100);
 const chosenNumb = document.querySelector('.js_input');
 const pista = document.querySelector('.js_pista');
-const span = document.querySelector('.js_span');
 const attemps = document.querySelector('.js_attemps');
 let counter = 1;
 
