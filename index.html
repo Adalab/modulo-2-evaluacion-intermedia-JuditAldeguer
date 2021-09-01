@@ -11,11 +11,16 @@
     <main>
       <h1>Adivinar el número</h1>
       <form class="form" action="">
-        <label for="">Introduce aquí tu número:</label>
+        <label for="chosenNumber">Introduce aquí tu número:</label>
         <input
+          id="chosenNumber"
+          name="chosenNumber"
           class="js_input"
+          min="0"
+          max="100"
           placeholder="Escribe un número del 0-100..."
-          type="text"
+          type="number"
+          required
         />
         <button class="btn js_btn">Prueba</button>
       </form>
