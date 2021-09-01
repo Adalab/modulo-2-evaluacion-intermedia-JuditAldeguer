@@ -23,6 +23,8 @@ main {
   background: linen;
   padding: 10px;
   border: solid 2px rgb(86, 101, 184);
+  text-align: center;
+  color: rgba(0, 0, 0, 0.534);
 }
 
 .form {

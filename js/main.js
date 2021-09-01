@@ -27,6 +27,7 @@ function answer() {
   if (chosenNumbN === initialNumb) {
     pista.innerHTML = 'Has ganado campeona!!!';
     pista.classList.add('winner');
+    pista.classList.remove('cheating');
   } else if (chosenNumbN !== initialNumb) {
     if ((chosenNumbN > initialNumb) & (chosenNumbN <= 100)) {
       pista.innerHTML =
@@ -41,6 +42,7 @@ function answer() {
     } else {
       pista.innerHTML = 'El número debe estar entre 1 y 100.';
       pista.classList.add('cheating');
+      pista.classList.remove('winner');
     }
   }
 }
