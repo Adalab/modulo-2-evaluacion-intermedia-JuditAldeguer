@@ -2,10 +2,10 @@
 
 //variables
 const btn = document.querySelector('.js_btn');
-const initialNumb = getRandomNumber(100);
 const chosenNumb = document.querySelector('.js_input');
 const pista = document.querySelector('.js_pista');
 const attemps = document.querySelector('.js_attemps');
+const initialNumb = getRandomNumber(100);
 let counter = 1;
 
 //functions
