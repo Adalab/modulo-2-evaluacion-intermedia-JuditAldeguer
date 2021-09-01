@@ -9,10 +9,20 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background: linear-gradient(
+    to bottom,
+    rgb(86, 101, 184),
+    rgb(71, 185, 176),
+    50%,
+    rgb(189, 230, 227) 90%
+  );
 }
 
 main {
   width: 345px;
+  background: linen;
+  padding: 10px;
+  border: solid 2px rgb(86, 101, 184);
 }
 
 .form {

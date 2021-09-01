@@ -45,7 +45,7 @@ function answer() {
   }
 }
 
-function countingCliks(event) {
+function countingCliks() {
   attemps.innerHTML = `Número de intentos: ${counter++}`;
 }
 
