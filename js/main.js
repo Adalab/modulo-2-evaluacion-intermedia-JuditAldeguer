@@ -31,8 +31,6 @@ function answer() {
   debugger;
   if (chosenNumbN === initialNumb) {
     writeTip('¡¡¡Has ganado campeona!!!');
-    // pista.classList.add('winner');
-    // pista.classList.remove('cheating');
     colorTextAdd('winner');
     colorTextRemove('cheating');
   } else if (chosenNumbN !== initialNumb) {
