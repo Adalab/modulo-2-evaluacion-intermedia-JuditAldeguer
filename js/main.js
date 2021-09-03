@@ -14,39 +14,40 @@ function getRandomNumber(max) {
 }
 
 function handleClickNumber(event) {
-  debugger;
   event.preventDefault();
-  console.log(`Mi número aleatorio es ${initialNumb}`);
+  console.log(`My random number is ${initialNumb}`);
   answer();
   countingCliks();
 }
 function handleClickNumber2(event) {
-  debugger;
   if (event.keyCode === 13) {
-    console.log(`Mi número aleatorio es ${initialNumb}`);
+    console.log(`My random number is ${initialNumb}`);
     answer();
     countingCliks();
   }
 }
 function answer() {
   const chosenNumbN = parseInt(chosenNumb.value);
+  debugger;
   if (chosenNumbN === initialNumb) {
     writeTip('¡¡¡Has ganado campeona!!!');
-    pista.classList.add('winner');
-    pista.classList.remove('cheating');
+    // pista.classList.add('winner');
+    // pista.classList.remove('cheating');
+    colorTextAdd('winner');
+    colorTextRemove('cheating');
   } else if (chosenNumbN !== initialNumb) {
     if ((chosenNumbN > initialNumb) & (chosenNumbN <= 100)) {
       writeTip(' Pista: <span class="js_span pista">Demasiado alto.</span>');
-      pista.classList.remove('winner');
-      pista.classList.remove('cheating');
+      colorTextRemove('cheating');
+      colorTextRemove('winner');
     } else if ((chosenNumbN < initialNumb) & (chosenNumbN > 0)) {
       writeTip(' Pista: <span class="js_span pista">Demasiado bajo.</span>');
-      pista.classList.remove('winner');
-      pista.classList.remove('cheating');
+      colorTextRemove('cheating');
+      colorTextRemove('winner');
     } else {
       writeTip('El número debe estar entre 1 y 100.');
-      pista.classList.add('cheating');
-      pista.classList.remove('winner');
+      colorTextAdd('cheating');
+      colorTextRemove('winner');
     }
   }
 }
@@ -56,6 +57,12 @@ function writeTip(message) {
 }
 function countingCliks() {
   attemps.innerHTML = `Número de intentos: ${counter++}`;
+}
+function colorTextAdd(a) {
+  pista.classList.add(a);
+}
+function colorTextRemove(b) {
+  pista.classList.remove(b);
 }
 
 //listeners
