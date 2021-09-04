@@ -7,7 +7,7 @@ let pista = document.querySelector('.js_pista');
 let attemps = document.querySelector('.js_attemps');
 const resetBtn = document.querySelector('.js_btnReset');
 let initialNumb = getRandomNumber(100);
-let counter = 0;
+let counter = 1;
 
 //functions
 function getRandomNumber(max) {
@@ -50,12 +50,20 @@ function answer() {
     }
   }
 }
-
+function answerReset() {
+  writeTip(' Pista: <span>Escribe el número y dale a Prueba</span>');
+  colorTextRemove('winner');
+  colorTextRemove('cheating');
+}
 function writeTip(message) {
   pista.innerHTML = message;
 }
 function countingCliks() {
-  counter = 1; // -------------------------------------da error
+  attemps.innerHTML = `Número de intentos: ${counter++}`;
+}
+function countingCliksReset() {
+  debugger;
+  counter = 0;
   attemps.innerHTML = `Número de intentos: ${counter++}`;
 }
 function colorTextAdd(a) {
@@ -68,10 +76,9 @@ function colorTextRemove(b) {
 function handleClickReset(ev) {
   ev.preventDefault();
   initialNumb = getRandomNumber(100);
-  writeTip(' Pista: <span>Escribe el número y dale a Prueba</span>');
-  counter = 0;
-  attemps.innerHTML = `Número de intentos: ${counter}`;
   debugger;
+  countingCliksReset();
+  answerReset();
   chosenNumb.innerHTML = '';
 }
 
