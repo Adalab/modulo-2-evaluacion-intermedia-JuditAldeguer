@@ -2,11 +2,12 @@
 
 //variables
 const btn = document.querySelector('.js_btn');
-const chosenNumb = document.querySelector('.js_input');
-const pista = document.querySelector('.js_pista');
-const attemps = document.querySelector('.js_attemps');
-const initialNumb = getRandomNumber(100);
-let counter = 1;
+let chosenNumb = document.querySelector('.js_input');
+let pista = document.querySelector('.js_pista');
+let attemps = document.querySelector('.js_attemps');
+const resetBtn = document.querySelector('.js_btnReset');
+let initialNumb = getRandomNumber(100);
+let counter = 0;
 
 //functions
 function getRandomNumber(max) {
@@ -35,11 +36,11 @@ function answer() {
     colorTextRemove('cheating');
   } else if (chosenNumbN !== initialNumb) {
     if ((chosenNumbN > initialNumb) & (chosenNumbN <= 100)) {
-      writeTip(' Pista: <span class="js_span pista">Demasiado alto.</span>');
+      writeTip(' Pista: <span class="pista">Demasiado alto.</span>');
       colorTextRemove('cheating');
       colorTextRemove('winner');
     } else if ((chosenNumbN < initialNumb) & (chosenNumbN > 0)) {
-      writeTip(' Pista: <span class="js_span pista">Demasiado bajo.</span>');
+      writeTip(' Pista: <span class="pista">Demasiado bajo.</span>');
       colorTextRemove('cheating');
       colorTextRemove('winner');
     } else {
@@ -54,6 +55,7 @@ function writeTip(message) {
   pista.innerHTML = message;
 }
 function countingCliks() {
+  counter = 1; // -------------------------------------da error
   attemps.innerHTML = `Número de intentos: ${counter++}`;
 }
 function colorTextAdd(a) {
@@ -63,6 +65,17 @@ function colorTextRemove(b) {
   pista.classList.remove(b);
 }
 
+function handleClickReset(ev) {
+  ev.preventDefault();
+  initialNumb = getRandomNumber(100);
+  writeTip(' Pista: <span>Escribe el número y dale a Prueba</span>');
+  counter = 0;
+  attemps.innerHTML = `Número de intentos: ${counter}`;
+  debugger;
+  chosenNumb.innerHTML = '';
+}
+
 //listeners
 btn.addEventListener('click', handleClickNumber);
 document.addEventListener('onkeydown', handleClickNumber2);
+resetBtn.addEventListener('click', handleClickReset);
