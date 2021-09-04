@@ -29,7 +29,6 @@ function handleClickNumber2(event) {
 }
 function answer() {
   const chosenNumbN = parseInt(chosenNumb.value);
-  debugger;
   if (chosenNumbN === initialNumb) {
     writeTip('¡¡¡Has ganado campeona!!!');
     colorTextAdd('winner');
@@ -62,7 +61,6 @@ function countingCliks() {
   attemps.innerHTML = `Número de intentos: ${counter++}`;
 }
 function countingCliksReset() {
-  debugger;
   counter = 0;
   attemps.innerHTML = `Número de intentos: ${counter++}`;
 }
@@ -76,10 +74,9 @@ function colorTextRemove(b) {
 function handleClickReset(ev) {
   ev.preventDefault();
   initialNumb = getRandomNumber(100);
-  debugger;
   countingCliksReset();
   answerReset();
-  chosenNumb.innerHTML = '';
+  chosenNumb.value = '';
 }
 
 //listeners
