@@ -28,7 +28,6 @@ function handleClickNumber2(event) {
 }
 function answer() {
   const chosenNumbN = parseInt(chosenNumb.value);
-  debugger;
   if (chosenNumbN === initialNumb) {
     writeTip('¡¡¡Has ganado campeona!!!');
     colorTextAdd('winner');
